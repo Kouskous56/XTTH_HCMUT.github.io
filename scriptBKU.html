@@ -1,0 +1,58 @@
+document.getElementById("calcForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const val = id => parseFloat(document.getElementById(id).value) || 0;
+
+  // Điểm năng lực
+  const dgnl = val("dgnl");
+  const toan = val("toan");
+  const diemNangLuc = (dgnl + toan) / 15;
+
+  // Điểm thi tốt nghiệp
+  const diemTHPT = (val("thpt1") + val("thpt2") + val("thpt3")) / 3 * 10;
+
+  // Điểm học bạ
+  const tb = [
+    val("tb1_10"), val("tb1_11"), val("tb1_12"),
+    val("tb2_10"), val("tb2_11"), val("tb2_12"),
+    val("tb3_10"), val("tb3_11"), val("tb3_12")
+  ];
+  const diemHocBa = tb.reduce((a, b) => a + b, 0) / tb.length * 10;
+
+  // Điểm học lực
+  const diemHocLuc = diemNangLuc * 0.7 + diemTHPT * 0.2 + diemHocBa * 0.1;
+
+  // Điểm cộng thành tích
+  let diemThanhTich = val("diemThanhTich");
+  let diemCong = (diemHocLuc + diemThanhTich < 100) ? diemThanhTich : (100 - diemHocLuc);
+  if (diemCong > 10) diemCong = 10;
+
+  // Điểm ưu tiên quy đổi
+  const diemUuTienGoc = val("diemUuTien");
+  const diemUuTienQD = diemUuTienGoc / 3 * 10;
+
+  // Tính điểm ưu tiên theo ngưỡng
+  let diemUuTien = 0;
+  const tongTruocUuTien = diemHocLuc + diemCong;
+  if (tongTruocUuTien < 75) {
+    diemUuTien = diemUuTienQD;
+  } else {
+    diemUuTien = ((100 - tongTruocUuTien) / 25) * diemUuTienQD;
+    diemUuTien = Math.round(diemUuTien * 100) / 100;
+  }
+
+  // Tổng điểm xét tuyển
+  const diemXT = diemHocLuc + diemCong + diemUuTien;
+
+  document.getElementById("result").innerHTML = `
+    <b>🧠 Điểm năng lực:</b> ${diemNangLuc.toFixed(2)}<br>
+    <b>🎓 Điểm tốt nghiệp:</b> ${diemTHPT.toFixed(2)}<br>
+    <b>📘 Điểm học bạ:</b> ${diemHocBa.toFixed(2)}<br>
+    <b>💡 Điểm học lực:</b> ${diemHocLuc.toFixed(2)}<br>
+    <b>🎖 Điểm cộng thành tích:</b> ${diemCong.toFixed(2)}<br>
+    <b>⭐ Điểm ưu tiên (quy đổi):</b> ${diemUuTienQD.toFixed(2)}<br>
+    <b>🏅 Điểm ưu tiên áp dụng:</b> ${diemUuTien.toFixed(2)}<br>
+    <hr>
+    <b style="font-size:1.2em;">🧾 Tổng điểm xét tuyển:</b> <span style="color:#00ffcc;">${diemXT.toFixed(2)}</span>
+  `;
+});
