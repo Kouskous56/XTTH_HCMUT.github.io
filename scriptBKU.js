@@ -59,6 +59,6 @@ document.getElementById('calcForm').addEventListener('submit', function (e) {
     <p><strong>Điểm ưu tiên quy đổi:</strong> ${diemUuTienQuyDoi.toFixed(2)}</p>
     <p><strong>Điểm ưu tiên:</strong> ${diemUuTienFinal.toFixed(2)}</p>
     <hr/>
-    <p style="font-size: 1.3rem;"><strong>✅ Tổng điểm xét tuyển:</strong> ${diemXetTuyen.toFixed(2)}</p>
+    <p class="result-total"><strong>Tổng điểm xét tuyển:</strong> ${diemXetTuyen.toFixed(2)}</p>
   `;
 });
