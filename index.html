@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tính điểm xét tuyển BKU (HCMUT)</title>
+  <link rel="stylesheet" href="styleBKU.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🏫 Tính điểm xét tuyển BKU</h1>
+    <form id="calcForm">
+
+      <h2>1. Điểm đánh giá năng lực (ĐGNL)</h2>
+      <div class="row">
+        <label for="dgnl">Tổng điểm ĐGNL:</label>
+        <input type="number" id="dgnl" min="0" max="150" step="0.01" placeholder="0–150" />
+      </div>
+      <div class="row">
+        <label for="toan">Điểm phần Toán trong ĐGNL:</label>
+        <input type="number" id="toan" min="0" max="150" step="0.01" placeholder="0–150" />
+      </div>
+
+      <h2>2. Điểm thi tốt nghiệp THPT</h2>
+      <div class="row">
+        <label for="thpt1">Môn 1:</label>
+        <input type="number" id="thpt1" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="thpt2">Môn 2:</label>
+        <input type="number" id="thpt2" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="thpt3">Môn 3:</label>
+        <input type="number" id="thpt3" min="0" max="10" step="0.01" placeholder="0–10" />
+      </div>
+
+      <h2>3. Điểm học bạ (trung bình 3 môn × 3 năm)</h2>
+      <div class="row">
+        <label>Môn 1:</label>
+        <label for="tb1_10">Lớp 10:</label>
+        <input type="number" id="tb1_10" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="tb1_11">Lớp 11:</label>
+        <input type="number" id="tb1_11" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="tb1_12">Lớp 12:</label>
+        <input type="number" id="tb1_12" min="0" max="10" step="0.01" placeholder="0–10" />
+      </div>
+      <div class="row">
+        <label>Môn 2:</label>
+        <label for="tb2_10">Lớp 10:</label>
+        <input type="number" id="tb2_10" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="tb2_11">Lớp 11:</label>
+        <input type="number" id="tb2_11" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="tb2_12">Lớp 12:</label>
+        <input type="number" id="tb2_12" min="0" max="10" step="0.01" placeholder="0–10" />
+      </div>
+      <div class="row">
+        <label>Môn 3:</label>
+        <label for="tb3_10">Lớp 10:</label>
+        <input type="number" id="tb3_10" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="tb3_11">Lớp 11:</label>
+        <input type="number" id="tb3_11" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="tb3_12">Lớp 12:</label>
+        <input type="number" id="tb3_12" min="0" max="10" step="0.01" placeholder="0–10" />
+      </div>
+
+      <h2>4. Điểm cộng thành tích (tối đa 10)</h2>
+      <div class="row">
+        <label for="diemThanhTich">Điểm cộng:</label>
+        <input type="number" id="diemThanhTich" min="0" max="10" step="0.01" placeholder="0–10" />
+      </div>
+
+      <h2>5. Điểm ưu tiên (thang 10)</h2>
+      <div class="row">
+        <label for="diemUuTien">Điểm ưu tiên:</label>
+        <input type="number" id="diemUuTien" min="0" max="10" step="0.01" placeholder="0–10" />
+      </div>
+
+      <button type="submit" aria-label="Tính điểm xét tuyển">🔢 Tính điểm</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="scriptBKU.js"></script>
+</body>
+</html>
