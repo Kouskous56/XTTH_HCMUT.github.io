@@ -14,62 +14,62 @@
       <h2>1. Điểm đánh giá năng lực (ĐGNL)</h2>
       <div class="row">
         <label for="dgnl">Tổng điểm ĐGNL:</label>
-        <input type="number" id="dgnl" min="0" max="1200" step="0.01" placeholder="0–150" />
+        <input type="number" id="dgnl" min="0" max="1200" step="0.01" placeholder="0-1200" required />
       </div>
       <div class="row">
         <label for="toan">Điểm phần Toán trong ĐGNL:</label>
-        <input type="number" id="toan" min="0" max="300" step="0.01" placeholder="0–150" />
+        <input type="number" id="toan" min="0" max="300" step="0.01" placeholder="0-300" required />
       </div>
 
-      <h2>2. Điểm thi tốt nghiệp THPT</h2>
+      <h2>2. Điểm thi tốt nghiệp THPT (Toán hệ số 2)</h2>
       <div class="row">
-        <label for="thpt1">Môn 1:</label>
-        <input type="number" id="thpt1" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="thpt1">Toán:</label>
+        <input type="number" id="thpt1" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="thpt2">Môn 2:</label>
-        <input type="number" id="thpt2" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="thpt2" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="thpt3">Môn 3:</label>
-        <input type="number" id="thpt3" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="thpt3" min="0" max="10" step="0.01" placeholder="0-10" required />
       </div>
 
-      <h2>3. Điểm học bạ (trung bình 3 môn × 3 năm)</h2>
+      <h2>3. Điểm học bạ (Toán hệ số 2)</h2>
       <div class="row">
-        <label>Môn 1:</label>
+        <label>Toán:</label>
         <label for="tb1_10">Lớp 10:</label>
-        <input type="number" id="tb1_10" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb1_10" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="tb1_11">Lớp 11:</label>
-        <input type="number" id="tb1_11" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb1_11" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="tb1_12">Lớp 12:</label>
-        <input type="number" id="tb1_12" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb1_12" min="0" max="10" step="0.01" placeholder="0-10" required />
       </div>
       <div class="row">
         <label>Môn 2:</label>
         <label for="tb2_10">Lớp 10:</label>
-        <input type="number" id="tb2_10" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb2_10" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="tb2_11">Lớp 11:</label>
-        <input type="number" id="tb2_11" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb2_11" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="tb2_12">Lớp 12:</label>
-        <input type="number" id="tb2_12" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb2_12" min="0" max="10" step="0.01" placeholder="0-10" required />
       </div>
       <div class="row">
         <label>Môn 3:</label>
         <label for="tb3_10">Lớp 10:</label>
-        <input type="number" id="tb3_10" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb3_10" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="tb3_11">Lớp 11:</label>
-        <input type="number" id="tb3_11" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb3_11" min="0" max="10" step="0.01" placeholder="0-10" required />
         <label for="tb3_12">Lớp 12:</label>
-        <input type="number" id="tb3_12" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="tb3_12" min="0" max="10" step="0.01" placeholder="0-10" required />
       </div>
 
       <h2>4. Điểm cộng thành tích (tối đa 10)</h2>
       <div class="row">
         <label for="diemThanhTich">Điểm cộng:</label>
-        <input type="number" id="diemThanhTich" min="0" max="10" step="0.01" placeholder="0–10" />
+        <input type="number" id="diemThanhTich" min="0" max="10" step="0.01" placeholder="0-10" />
       </div>
 
-      <h2>5. Điểm ưu tiên (thang 10)</h2>
+      <h2>5. Điểm ưu tiên khu vực, đối tượng</h2>
       <div class="row">
-        <label for="diemUuTien">Điểm ưu tiên:</label>
-        <input type="number" id="diemUuTien" min="0" max="10" step="0.01" placeholder="0–10" />
+        <label for="diemUuTien">Điểm ưu tiên gốc:</label>
+        <input type="number" id="diemUuTien" min="0" max="2.75" step="0.01" placeholder="0-2.75" />
       </div>
 
       <button type="submit" aria-label="Tính điểm xét tuyển">Tính điểm</button>
